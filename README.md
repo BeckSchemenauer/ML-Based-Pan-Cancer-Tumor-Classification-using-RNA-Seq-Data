@@ -11,6 +11,7 @@ A machine learning framework for analyzing high-dimensional gene expression data
     * **Outer Loop**: Evaluates all models on the top-N features (N=1 to 50) to determine optimal feature set size.
 * **`baseline.py`**: Provides a control experiment by evaluating models using random feature selection instead of RF importance. Uses logistic regression for prediction.
 * **`gene_mapper.py`**: A post-processing script that maps internal dummy names back to biological gene symbols.
+* * **`plots/`**: Contains specialized visualization scripts for performance analysis. See the internal [`plots/README.md`](./plots/README.md) for detailed usage of the accuracy curve and bar chart generators.
 
 ### Prerequisites
 - Python 3.8+
