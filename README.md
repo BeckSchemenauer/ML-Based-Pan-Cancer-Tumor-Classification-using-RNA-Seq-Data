@@ -18,9 +18,11 @@ A machine learning framework for analyzing high-dimensional gene expression data
 - pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, plotly
 
 ### Data Setup
-Place your transcriptomics data in a `./Data/` directory or use the given data:
-- `data.csv`: Gene expression matrix (Samples x Genes).
-- `labels.csv`: Target classes for each sample.
+Due to licensing and size restrictions, the raw transcriptomics data is not included in this repository. You must manually download the **Gene expression cancer RNA-Seq** dataset from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/401/gene+expression+cancer+rna+seq).
+
+Place the following files in a `./Data/` directory:
+- `data.csv`: The gene expression matrix (Samples x Genes).
+- `labels.csv`: Target classes corresponding to each sample index.
 
 ### Running the Analysis
 1. **Initial EDA**:
@@ -33,6 +35,18 @@ Place your transcriptomics data in a `./Data/` directory or use the given data:
    Run `python baseline.py` to compare your RF-ranked results against random feature selection.
 
 4. **Map Genes to Biological IDs**:
-   The dataset uses dummy names (`gene_0`, `gene_1`, etc.). To identify the actual genes, you must provide the **original platform specifications** (e.g., from Synapse or the UCI repository) as an external reference file for `gene_mapper.py`. 
-   
-   > **Note:** The mapping relies on the fact that dummy attributes are ordered consistently with the original submission. Due to data restrictions, the mapping reference file is not included in this repository and must be obtained from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/401/gene+expression+cancer+rna+seq) or [Synapse](https://www.synapse.org/#!Synapse:syn4301332).
+   The dataset uses dummy names (e.g., `gene_0`). To identify the actual genes, you must provide an external reference file (such as the original platform specifications) for `gene_mapper.py`.
+
+   > **Note:** Due to data restrictions, this mapping reference is not included in the repository. It must be obtained from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/401/gene+expression+cancer+rna+seq) or [Synapse](https://www.synapse.org/#!Synapse:syn4301332), where attributes are ordered consistently with the dummy names.
+
+## Licensing & Attribution
+
+### Code
+This project's source code is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code for any purpose.
+
+### Data Attribution
+The dataset used in this project is the **Gene expression cancer RNA-Seq**, originally part of the RNA-Seq (HiSeq) PANCAN data set.
+
+* **License**: The dataset is licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. This allows for sharing and adaptation provided appropriate credit is given.
+* **Citation**: Fiorini, S. (2016). gene expression cancer RNA-Seq [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5R88H.
+* **Original Source**: The primary data set is maintained by the [Cancer Genome Atlas Pan-Cancer Analysis Project](https://www.synapse.org/#!Synapse:syn4301332).
