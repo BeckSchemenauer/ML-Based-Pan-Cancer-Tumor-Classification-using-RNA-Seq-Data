@@ -4,14 +4,13 @@ A machine learning framework for analyzing high-dimensional gene expression data
 
 ## Project Structure
 
-* **`Data.py`**: Core utility for data loading, standard scaling, and Exploratory Data Analysis (EDA). Includes functions for class distribution plots and PCA (2D/3D).
-* **`prediction.py`**: A modular "model bank" containing scikit-learn and XGBoost pipelines. Models include Logistic Regression, SVM, KNN, MLP (Neural Network), and XGBoost.
-* **`full_pipeline.py`**: The primary execution script. Implements an efficient nested CV:
-    * **Inner Loop**: Ranks features using Random Forest importance.
-    * **Outer Loop**: Evaluates all models on the top-N features (N=1 to 50) to determine optimal feature set size.
-* **`baseline.py`**: Provides a control experiment by evaluating models using random feature selection instead of RF importance. Uses logistic regression for prediction.
-* **`gene_mapper.py`**: A post-processing script that maps internal dummy names back to biological gene symbols.
-* * **`plots/`**: Contains specialized visualization scripts for performance analysis. See the internal [`plots/README.md`](./plots/README.md) for detailed usage of the accuracy curve and bar chart generators.
+* **`code/`**: Contains the core machine learning pipeline and utility scripts.
+    * **`data.py`**: Core utility for data loading, standard scaling, and Exploratory Data Analysis (EDA). Includes functions for class distribution plots and PCA (2D/3D).
+    * **`prediction.py`**: A modular "model bank" containing scikit-learn and XGBoost pipelines. Models include Logistic Regression, SVM, KNN, MLP (Neural Network), and XGBoost.
+    * **`full_pipeline.py`**: The primary execution script. Implements an efficient nested CV that ranks features using Random Forest importance and evaluates all models on the top-N features.
+    * **`baseline.py`**: Provides a control experiment by evaluating models using random feature selection instead of RF importance.
+    * **`gene_mapper.py`**: A post-processing script that maps internal dummy names back to biological gene symbols using an external reference.
+* **`plots/`**: Contains specialized visualization scripts for performance analysis, including accuracy curves and grouped bar charts. See the internal [`plots/README.md`](./plots/README.md) for details.
 
 ### Prerequisites
 - Python 3.8+
