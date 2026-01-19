@@ -21,7 +21,7 @@ def plot_nested_cv_results(paths, labels, max_N=None, mask=None):
     for i, (path, label) in enumerate(zip(paths, labels)):
         color = tableau_colors[i % len(tableau_colors)]
 
-        # if masked → skip drawing, but DO NOT skip color index (so same model is always same color)
+        # if masked → skip drawing, but don't skip color index (so same model is always same color)
         if i in mask:
             continue
 
