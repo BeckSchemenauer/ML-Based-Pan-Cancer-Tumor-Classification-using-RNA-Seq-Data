@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Data and large CSVs
+Data/*.csv
+Data/*.tsv
+nested_cv_sharedfs/
+nested_cv_outputs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Plot outputs
+*.png
+eda_plot_*.png
+AAA_grouped_bar_chart.png
